@@ -57,9 +57,9 @@ void() knight_attack =
 	len = vlen(self.enemy.origin+self.enemy.view_ofs - (self.origin+self.view_ofs));
 
 	if (len<80)
-		knight_atk1 ();
+		knight_atk1();
 	else
-		knight_runatk1 ();
+		knight_runatk1();
 };
 
 //=============================================================================

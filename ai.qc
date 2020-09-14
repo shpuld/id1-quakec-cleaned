@@ -372,7 +372,7 @@ float() FindTarget =
 // spawnflags & 3 is a big hack, because zombie crucified used the first
 // spawn flag prior to the ambush flag, and I forgot about it, so the second
 // spawn flag works as well
-	if (sight_entity_time >= time - 0.1 && !(self.spawnflags & 3) )
+	if (sight_entity_time >= time - 0.1 && !(self.spawnflags & 3))
 	{
 		client = sight_entity;
 		if (client.enemy == self.enemy)
@@ -440,7 +440,7 @@ void(float dist) ai_forward =
 
 void(float dist) ai_back =
 {
-	walkmove( (self.angles_y+180), dist);
+	walkmove((self.angles_y+180), dist);
 };
 
 
@@ -457,8 +457,8 @@ void(float dist) ai_pain =
 /*
 	float away;
 
-	away = anglemod (vectoyaw(self.origin - self.enemy.origin)
-	+ 180*(random()- 0.5) );
+	away = anglemod(vectoyaw(self.origin - self.enemy.origin)
+	+ 180*(random()- 0.5));
 
 	walkmove(away, dist);
 */

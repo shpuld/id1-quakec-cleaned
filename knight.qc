@@ -177,12 +177,12 @@ void(entity attacker, float damage) knight_pain =
 	sound(self, CHAN_VOICE, "knight/khurt.wav", 1, ATTN_NORM);
 	if (r < 0.85)
 	{
-		knight_pain1 ();
+		knight_pain1();
 		self.pain_finished = time + 1;
 	}
 	else
 	{
-		knight_painb1 ();
+		knight_painb1();
 		self.pain_finished = time + 1;
 	}
 
@@ -246,9 +246,9 @@ void() knight_die =
 // regular death
 	sound(self, CHAN_VOICE, "knight/kdeath.wav", 1, ATTN_NORM);
 	if (random() < 0.5)
-		knight_die1 ();
+		knight_die1();
 	else
-		knight_dieb1 ();
+		knight_dieb1();
 };
 
 

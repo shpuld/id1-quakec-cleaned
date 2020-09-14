@@ -36,7 +36,7 @@ void() W_Precache =
 	precache_sound("weapons/ric2.wav"); // ricochet (used in c code)
 	precache_sound("weapons/ric3.wav"); // ricochet (used in c code)
 	precache_sound("weapons/spike2.wav"); // super spikes
-	precache_sound("weapons/tink1.wav"); // spikes tink (used in c code)
+	precache_sound("weapons/tink1.wav"); // spikes tink(used in c code)
 	precache_sound("weapons/grenade.wav"); // grenade launcher
 	precache_sound("weapons/bounce.wav"); // grenade bounce
 	precache_sound("weapons/shotgn2.wav"); // super shotgun
@@ -908,34 +908,34 @@ void() W_Attack =
 		sound(self, CHAN_WEAPON, "weapons/ax1.wav", 1, ATTN_NORM);
 		r = random();
 		if (r < 0.25)
-			player_axe1 ();
+			player_axe1();
 		else if (r<0.5)
-			player_axeb1 ();
+			player_axeb1();
 		else if (r<0.75)
-			player_axec1 ();
+			player_axec1();
 		else
-			player_axed1 ();
+			player_axed1();
 		self.attack_finished = time + 0.5;
 	}
 	else if (self.weapon == IT_SHOTGUN)
 	{
-		player_shot1 ();
+		player_shot1();
 		W_FireShotgun();
 		self.attack_finished = time + 0.5;
 	}
 	else if (self.weapon == IT_SUPER_SHOTGUN)
 	{
-		player_shot1 ();
+		player_shot1();
 		W_FireSuperShotgun();
 		self.attack_finished = time + 0.7;
 	}
 	else if (self.weapon == IT_NAILGUN)
 	{
-		player_nail1 ();
+		player_nail1();
 	}
 	else if (self.weapon == IT_SUPER_NAILGUN)
 	{
-		player_nail1 ();
+		player_nail1();
 	}
 	else if (self.weapon == IT_GRENADE_LAUNCHER)
 	{
@@ -1134,7 +1134,7 @@ void() CycleWeaponCommand =
 				am = 1;
 		}
 
-		if ( (self.items & self.weapon) && am == 0)
+		if ((self.items & self.weapon) && am == 0)
 		{
 			W_SetCurrentAmmo();
 			return;
@@ -1200,7 +1200,7 @@ void() CycleWeaponBack =
 				am = 1;
 		}
 
-		if ( (self.items & self.weapon) && am == 0)
+		if ((self.items & self.weapon) && am == 0)
 		{
 			W_SetCurrentAmmo();
 			return;

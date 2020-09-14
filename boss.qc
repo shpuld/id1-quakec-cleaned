@@ -68,12 +68,8 @@ void() boss_face =
 	ai_face();
 };
 
-void() boss_rise1 = [ $rise1, boss_rise2 ] {
-sound(self, CHAN_WEAPON, "boss1/out1.wav", 1, ATTN_NORM);
-};
-void() boss_rise2 = [ $rise2, boss_rise3 ] {
-sound(self, CHAN_VOICE, "boss1/sight1.wav", 1, ATTN_NORM);
-};
+void() boss_rise1 = [ $rise1, boss_rise2 ] { sound(self, CHAN_WEAPON, "boss1/out1.wav", 1, ATTN_NORM); };
+void() boss_rise2 = [ $rise2, boss_rise3 ] { sound(self, CHAN_VOICE, "boss1/sight1.wav", 1, ATTN_NORM); };
 void() boss_rise3 = [ $rise3, boss_rise4 ] {};
 void() boss_rise4 = [ $rise4, boss_rise5 ] {};
 void() boss_rise5 = [ $rise5, boss_rise6 ] {};
@@ -182,9 +178,7 @@ void() boss_shockc8 = [ $shockc8, boss_shockc9 ] {};
 void() boss_shockc9 = [ $shockc9, boss_shockc10 ] {};
 void() boss_shockc10 = [ $shockc10, boss_death1 ] {};
 
-void() boss_death1 = [ $death1, boss_death2 ] {
-sound(self, CHAN_VOICE, "boss1/death.wav", 1, ATTN_NORM);
-};
+void() boss_death1 = [ $death1, boss_death2 ] { sound(self, CHAN_VOICE, "boss1/death.wav", 1, ATTN_NORM); };
 void() boss_death2 = [ $death2, boss_death3 ] {};
 void() boss_death3 = [ $death3, boss_death4 ] {};
 void() boss_death4 = [ $death4, boss_death5 ] {};
@@ -246,7 +240,7 @@ void(vector p) boss_missile =
 
 // check for dead enemy
 	if (self.enemy.health <= 0)
-		boss_idle1 ();
+		boss_idle1();
 };
 
 
@@ -273,7 +267,7 @@ void() boss_awake =
 	WriteCoord(MSG_BROADCAST, self.origin_z);
 
 	self.yaw_speed = 20;
-	boss_rise1 ();
+	boss_rise1();
 };
 
 

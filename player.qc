@@ -379,9 +379,9 @@ void(entity attacker, float damage) player_pain =
 		return; // eyes don't have pain frames
 
 	if (self.weapon == IT_AXE)
-		player_axpain1 ();
+		player_axpain1();
 	else
-		player_pain1 ();
+		player_pain1();
 };
 
 void() player_diea1;
@@ -593,7 +593,7 @@ void() PlayerDie =
 
 	if (self.weapon == IT_AXE)
 	{
-		player_die_ax1 ();
+		player_die_ax1();
 		return;
 	}
 

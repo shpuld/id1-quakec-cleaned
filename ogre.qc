@@ -83,7 +83,7 @@ void() OgreGrenadeExplode =
 	self.touch = SUB_Null;
 	setmodel(self, "progs/s_explod.spr");
 	self.solid = SOLID_NOT;
-	s_explode1 ();
+	s_explode1();
 };
 
 void() OgreGrenadeTouch =
@@ -186,10 +186,11 @@ void() ogre_stand1 = [ $stand1, ogre_stand2 ] { ai_stand(); };
 void() ogre_stand2 = [ $stand2, ogre_stand3 ] { ai_stand(); };
 void() ogre_stand3 = [ $stand3, ogre_stand4 ] { ai_stand(); };
 void() ogre_stand4 = [ $stand4, ogre_stand5 ] { ai_stand(); };
-void() ogre_stand5 = [ $stand5, ogre_stand6 ] {
-if (random() < 0.2)
-	sound(self, CHAN_VOICE, "ogre/ogidle.wav", 1, ATTN_IDLE);
-ai_stand();
+void() ogre_stand5 = [ $stand5, ogre_stand6 ]
+{
+	if (random() < 0.2)
+		sound(self, CHAN_VOICE, "ogre/ogidle.wav", 1, ATTN_IDLE);
+	ai_stand();
 };
 void() ogre_stand6 = [ $stand6, ogre_stand7 ] { ai_stand(); };
 void() ogre_stand7 = [ $stand7, ogre_stand8 ] { ai_stand(); };
@@ -198,17 +199,19 @@ void() ogre_stand9 = [ $stand9, ogre_stand1 ] { ai_stand(); };
 
 void() ogre_walk1 = [ $walk1, ogre_walk2 ] { ai_walk(3); };
 void() ogre_walk2 = [ $walk2, ogre_walk3 ] { ai_walk(2); };
-void() ogre_walk3 = [ $walk3, ogre_walk4 ] {
-ai_walk(2);
-if (random() < 0.2)
-	sound(self, CHAN_VOICE, "ogre/ogidle.wav", 1, ATTN_IDLE);
+void() ogre_walk3 = [ $walk3, ogre_walk4 ]
+{
+	ai_walk(2);
+	if (random() < 0.2)
+		sound(self, CHAN_VOICE, "ogre/ogidle.wav", 1, ATTN_IDLE);
 };
 void() ogre_walk4 = [ $walk4, ogre_walk5 ] { ai_walk(2); };
 void() ogre_walk5 = [ $walk5, ogre_walk6 ] { ai_walk(2); };
-void() ogre_walk6 = [ $walk6, ogre_walk7 ] {
-ai_walk(5);
-if (random() < 0.1)
-	sound(self, CHAN_VOICE, "ogre/ogdrag.wav", 1, ATTN_IDLE);
+void() ogre_walk6 = [ $walk6, ogre_walk7 ]
+{
+	ai_walk(5);
+	if (random() < 0.1)
+		sound(self, CHAN_VOICE, "ogre/ogdrag.wav", 1, ATTN_IDLE);
 };
 void() ogre_walk7 = [ $walk7, ogre_walk8 ] { ai_walk(3); };
 void() ogre_walk8 = [ $walk8, ogre_walk9 ] { ai_walk(2); };
@@ -384,27 +387,27 @@ void(entity attacker, float damage) ogre_pain =
 
 	if (r < 0.25)
 	{
-		ogre_pain1 ();
+		ogre_pain1();
 		self.pain_finished = time + 1;
 	}
 	else if (r < 0.5)
 	{
-		ogre_painb1 ();
+		ogre_painb1();
 		self.pain_finished = time + 1;
 	}
 	else if (r < 0.75)
 	{
-		ogre_painc1 ();
+		ogre_painc1();
 		self.pain_finished = time + 1;
 	}
 	else if (r < 0.88)
 	{
-		ogre_paind1 ();
+		ogre_paind1();
 		self.pain_finished = time + 2;
 	}
 	else
 	{
-		ogre_paine1 ();
+		ogre_paine1();
 		self.pain_finished = time + 2;
 	}
 };
@@ -447,7 +450,7 @@ void() ogre_bdie10 = [ $bdeath10, ogre_bdie10 ] {};
 
 void() ogre_die =
 {
-// check for gib
+	// check for gib
 	if (self.health < -80)
 	{
 		sound(self, CHAN_VOICE, "player/udeath.wav", 1, ATTN_NORM);
@@ -461,17 +464,17 @@ void() ogre_die =
 	sound(self, CHAN_VOICE, "ogre/ogdth.wav", 1, ATTN_NORM);
 
 	if (random() < 0.5)
-		ogre_die1 ();
+		ogre_die1();
 	else
-		ogre_bdie1 ();
+		ogre_bdie1();
 };
 
 void() ogre_melee =
 {
 	if (random() > 0.5)
-		ogre_smash1 ();
+		ogre_smash1();
 	else
-		ogre_swing1 ();
+		ogre_swing1();
 };
 
 

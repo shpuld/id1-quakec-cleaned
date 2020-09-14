@@ -164,7 +164,8 @@ void() dog_run12 = [ $run12  , dog_run1 ] { ai_run(32); };
 void() dog_atta1 = [ $attack1, dog_atta2 ] { ai_charge(10); };
 void() dog_atta2 = [ $attack2, dog_atta3 ] { ai_charge(10); };
 void() dog_atta3 = [ $attack3, dog_atta4 ] { ai_charge(10); };
-void() dog_atta4 = [ $attack4, dog_atta5 ] {
+void() dog_atta4 = [ $attack4, dog_atta5 ]
+{
 	sound(self, CHAN_VOICE, "dog/dattack1.wav", 1, ATTN_NORM);
 	dog_bite();
 };
@@ -223,9 +224,9 @@ void(entity attacker, float damage) dog_pain =
 	sound(self, CHAN_VOICE, "dog/dpain1.wav", 1, ATTN_NORM);
 
 	if (random() > 0.5)
-		dog_pain1 ();
+		dog_pain1();
 	else
-		dog_painb1 ();
+		dog_painb1();
 };
 
 void() dog_die1 = [ $death1, dog_die2 ] {};
@@ -267,9 +268,9 @@ void() dog_die =
 	self.solid = SOLID_NOT;
 
 	if (random() > 0.5)
-		dog_die1 ();
+		dog_die1();
 	else
-		dog_dieb1 ();
+		dog_dieb1();
 };
 
 //============================================================================

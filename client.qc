@@ -51,8 +51,7 @@ void() info_intermission =
 void() SetChangeParms =
 {
 // remove items
-	self.items = self.items - (self.items &
-	(IT_KEY1 | IT_KEY2 | IT_INVISIBILITY | IT_INVULNERABILITY | IT_SUIT | IT_QUAD) );
+	self.items -= self.items & (IT_KEY1 | IT_KEY2 | IT_INVISIBILITY | IT_INVULNERABILITY | IT_SUIT | IT_QUAD);
 
 // cap super health
 	if (self.health > 100)
@@ -233,7 +232,7 @@ void() ExitIntermission =
 			return;
 		}
 
-		if ( (serverflags&15) == 15)
+		if ((serverflags&15) == 15)
 		{
 			WriteByte(MSG_ALL, SVC_FINALE);
 			WriteString(MSG_ALL, "Now, you have all four Runes. You sense\ntremendous invisible forces moving to\nunseal ancient barriers. Shub-Niggurath\nhad hoped to use the Runes Herself to\nclear off the Earth, but now instead,\nyou will use them to enter her home and\nconfront her as an avatar of avenging\nEarth-life. If you defeat her, you will\nbe remembered forever as the savior of\nthe planet. If she conquers, it will be\nas if you had never been born.");
@@ -513,7 +512,7 @@ void() PutClientInServer =
 
 	self.view_ofs = '0 0 22';
 
-	player_stand1 ();
+	player_stand1();
 
 	if (deathmatch || coop)
 	{
@@ -799,7 +798,7 @@ void() WaterMove =
 		self.dmgtime = 0;
 	}
 
-	if (! (self.flags & FL_WATERJUMP) )
+	if (!(self.flags & FL_WATERJUMP))
 		self.velocity = self.velocity - 0.8*self.waterlevel*frametime*self.velocity;
 };
 

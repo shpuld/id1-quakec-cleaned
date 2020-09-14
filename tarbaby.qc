@@ -151,13 +151,14 @@ void() tbaby_jump5;
 void() tbaby_fly1 = [ $fly1, tbaby_fly2 ] {};
 void() tbaby_fly2 = [ $fly2, tbaby_fly3 ] {};
 void() tbaby_fly3 = [ $fly3, tbaby_fly4 ] {};
-void() tbaby_fly4 = [ $fly4, tbaby_fly1 ] {
-self.cnt = self.cnt + 1;
-if (self.cnt == 4)
+void() tbaby_fly4 = [ $fly4, tbaby_fly1 ]
 {
-//dprint("spawn hop\n");
-tbaby_jump5 ();
-}
+	self.cnt = self.cnt + 1;
+	if (self.cnt == 4)
+	{
+		//dprint("spawn hop\n");
+		tbaby_jump5();
+	}
 };
 
 void() tbaby_jump1 = [ $jump1, tbaby_jump2 ] { ai_face(); };
@@ -176,15 +177,13 @@ void() tbaby_jump5 = [ $jump5, tbaby_jump6 ]
 		self.flags = self.flags - FL_ONGROUND;
 	self.cnt = 0;
 };
-void() tbaby_jump6 = [ $jump6,tbaby_fly1 ] {};
+void() tbaby_jump6 = [ $jump6, tbaby_fly1 ] {};
 
 
 
 //=============================================================================
 
-void() tbaby_die1 = [ $exp, tbaby_die2 ] {
-self.takedamage = DAMAGE_NO;
-};
+void() tbaby_die1 = [ $exp, tbaby_die2 ] { self.takedamage = DAMAGE_NO; };
 void() tbaby_die2 = [ $exp, tbaby_run1 ]
 {
 	T_RadiusDamage(self, self, 120, world);

@@ -428,7 +428,7 @@ void() weapon_touch =
 
 	if (self.classname == "weapon_nailgun")
 	{
-		if (leave && (other.items & IT_NAILGUN) )
+		if (leave && (other.items & IT_NAILGUN))
 			return;
 		hadammo = other.ammo_nails;
 		new = IT_NAILGUN;
@@ -436,7 +436,7 @@ void() weapon_touch =
 	}
 	else if (self.classname == "weapon_supernailgun")
 	{
-		if (leave && (other.items & IT_SUPER_NAILGUN) )
+		if (leave && (other.items & IT_SUPER_NAILGUN))
 			return;
 		hadammo = other.ammo_rockets;
 		new = IT_SUPER_NAILGUN;
@@ -444,7 +444,7 @@ void() weapon_touch =
 	}
 	else if (self.classname == "weapon_supershotgun")
 	{
-		if (leave && (other.items & IT_SUPER_SHOTGUN) )
+		if (leave && (other.items & IT_SUPER_SHOTGUN))
 			return;
 		hadammo = other.ammo_rockets;
 		new = IT_SUPER_SHOTGUN;
@@ -452,7 +452,7 @@ void() weapon_touch =
 	}
 	else if (self.classname == "weapon_rocketlauncher")
 	{
-		if (leave && (other.items & IT_ROCKET_LAUNCHER) )
+		if (leave && (other.items & IT_ROCKET_LAUNCHER))
 			return;
 		hadammo = other.ammo_rockets;
 		new = IT_ROCKET_LAUNCHER;
@@ -460,7 +460,7 @@ void() weapon_touch =
 	}
 	else if (self.classname == "weapon_grenadelauncher")
 	{
-		if (leave && (other.items & IT_GRENADE_LAUNCHER) )
+		if (leave && (other.items & IT_GRENADE_LAUNCHER))
 			return;
 		hadammo = other.ammo_rockets;
 		new = IT_GRENADE_LAUNCHER;
@@ -468,7 +468,7 @@ void() weapon_touch =
 	}
 	else if (self.classname == "weapon_lightning")
 	{
-		if (leave && (other.items & IT_LIGHTNING) )
+		if (leave && (other.items & IT_LIGHTNING))
 			return;
 		hadammo = other.ammo_rockets;
 		new = IT_LIGHTNING;

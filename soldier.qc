@@ -180,19 +180,19 @@ void(entity attacker, float damage) army_pain =
 	if (r < 0.2)
 	{
 		self.pain_finished = time + 0.6;
-		army_pain1 ();
+		army_pain1();
 		sound(self, CHAN_VOICE, "soldier/pain1.wav", 1, ATTN_NORM);
 	}
 	else if (r < 0.6)
 	{
 		self.pain_finished = time + 1.1;
-		army_painb1 ();
+		army_painb1();
 		sound(self, CHAN_VOICE, "soldier/pain2.wav", 1, ATTN_NORM);
 	}
 	else
 	{
 		self.pain_finished = time + 1.1;
-		army_painc1 ();
+		army_painc1();
 		sound(self, CHAN_VOICE, "soldier/pain2.wav", 1, ATTN_NORM);
 	}
 };
@@ -269,9 +269,9 @@ void() army_die =
 // regular death
 	sound(self, CHAN_VOICE, "soldier/death1.wav", 1, ATTN_NORM);
 	if (random() < 0.5)
-		army_die1 ();
+		army_die1();
 	else
-		army_cdie1 ();
+		army_cdie1();
 };
 
 

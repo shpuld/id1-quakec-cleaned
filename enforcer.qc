@@ -251,22 +251,22 @@ void(entity attacker, float damage) enf_pain =
 	if (r < 0.2)
 	{
 		self.pain_finished = time + 1;
-		enf_paina1 ();
+		enf_paina1();
 	}
 	else if (r < 0.4)
 	{
 		self.pain_finished = time + 1;
-		enf_painb1 ();
+		enf_painb1();
 	}
 	else if (r < 0.7)
 	{
 		self.pain_finished = time + 1;
-		enf_painc1 ();
+		enf_painc1();
 	}
 	else
 	{
 		self.pain_finished = time + 2;
-		enf_paind1 ();
+		enf_paind1();
 	}
 };
 
@@ -329,9 +329,9 @@ void() enf_die =
 // regular death
 	sound(self, CHAN_VOICE, "enforcer/death1.wav", 1, ATTN_NORM);
 	if (random() > 0.5)
-		enf_die1 ();
+		enf_die1();
 	else
-		enf_fdie1 ();
+		enf_fdie1();
 };
 
 

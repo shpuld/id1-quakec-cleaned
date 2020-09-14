@@ -167,7 +167,7 @@ void(entity attacker, float damage) fish_pain =
 {
 
 // fish allways do pain frames
-	f_pain1 ();
+	f_pain1();
 };
 
 

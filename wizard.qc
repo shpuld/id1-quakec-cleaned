@@ -120,7 +120,7 @@ float() WizardCheckAttack =
 		if (self.attack_state != AS_STRAIGHT)
 		{
 			self.attack_state = AS_STRAIGHT;
-			wiz_run1 ();
+			wiz_run1();
 		}
 		return FALSE;
 	}
@@ -138,7 +138,7 @@ float() WizardCheckAttack =
 		if (self.attack_state != AS_STRAIGHT)
 		{
 			self.attack_state = AS_STRAIGHT;
-			wiz_run1 ();
+			wiz_run1();
 		}
 		return FALSE;
 	}
@@ -163,7 +163,7 @@ float() WizardCheckAttack =
 		if (self.attack_state != AS_STRAIGHT)
 		{
 			self.attack_state = AS_STRAIGHT;
-			wiz_run1 ();
+			wiz_run1();
 		}
 	}
 	else
@@ -171,7 +171,7 @@ float() WizardCheckAttack =
 		if (self.attack_state != AS_SLIDING)
 		{
 			self.attack_state = AS_SLIDING;
-			wiz_side1 ();
+			wiz_side1();
 		}
 	}
 
@@ -377,7 +377,7 @@ void() wiz_die =
 		return;
 	}
 
-	wiz_death1 ();
+	wiz_death1();
 };
 
 
@@ -387,7 +387,7 @@ void(entity attacker, float damage) Wiz_Pain =
 	if (random()*70 > damage)
 		return; // didn't flinch
 
-	wiz_pain1 ();
+	wiz_pain1();
 };
 
 

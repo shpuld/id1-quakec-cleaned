@@ -168,9 +168,11 @@ void(float side) ShamClaw =
 	}
 };
 
-void() sham_swingl1 = [ $swingl1, sham_swingl2 ] {
-sound(self, CHAN_VOICE, "shambler/melee2.wav", 1, ATTN_NORM);
-ai_charge(5);};
+void() sham_swingl1 = [ $swingl1, sham_swingl2 ]
+{
+	sound(self, CHAN_VOICE, "shambler/melee2.wav", 1, ATTN_NORM);
+	ai_charge(5);
+};
 void() sham_swingl2 = [ $swingl2, sham_swingl3 ] { ai_charge(3); };
 void() sham_swingl3 = [ $swingl3, sham_swingl4 ] { ai_charge(7); };
 void() sham_swingl4 = [ $swingl4, sham_swingl5 ] { ai_charge(3); };
@@ -178,10 +180,11 @@ void() sham_swingl5 = [ $swingl5, sham_swingl6 ] { ai_charge(7); };
 void() sham_swingl6 = [ $swingl6, sham_swingl7 ] { ai_charge(9); };
 void() sham_swingl7 = [ $swingl7, sham_swingl8 ] { ai_charge(5); ShamClaw(250); };
 void() sham_swingl8 = [ $swingl8, sham_swingl9 ] { ai_charge(4); };
-void() sham_swingl9 = [ $swingl9, sham_run1  ] {
-ai_charge(8);
-if (random()<0.5)
-	self.think = sham_swingr1;
+void() sham_swingl9 = [ $swingl9, sham_run1  ]
+{
+	ai_charge(8);
+	if (random()<0.5)
+		self.think = sham_swingr1;
 };
 
 void() sham_swingr1 = [ $swingr1, sham_swingr2 ]
@@ -210,11 +213,11 @@ void() sham_melee =
 
 	chance = random();
 	if (chance > 0.6 || self.health == 600)
-		sham_smash1 ();
+		sham_smash1();
 	else if (chance > 0.3)
-		sham_swingr1 ();
+		sham_swingr1();
 	else
-		sham_swingl1 ();
+		sham_swingl1();
 };
 
 
@@ -318,7 +321,7 @@ void(entity attacker, float damage) sham_pain =
 		return;
 	self.pain_finished = time + 2;
 
-	sham_pain1 ();
+	sham_pain1();
 };
 
 
@@ -351,7 +354,7 @@ void() sham_die =
 
 // regular death
 	sound(self, CHAN_VOICE, "shambler/sdeath.wav", 1, ATTN_NORM);
-	sham_death1 ();
+	sham_death1();
 };
 
 //============================================================================

@@ -110,9 +110,10 @@ void() demon1_jump6 = [ $leap6, demon1_jump7 ] {};
 void() demon1_jump7 = [ $leap7, demon1_jump8 ] {};
 void() demon1_jump8 = [ $leap8, demon1_jump9 ] {};
 void() demon1_jump9 = [ $leap9, demon1_jump10 ] {};
-void() demon1_jump10 = [ $leap10, demon1_jump1 ] {
-self.nextthink = time + 3;
-// if three seconds pass, assume demon is stuck and jump again
+void() demon1_jump10 = [ $leap10, demon1_jump1 ]
+{
+	self.nextthink = time + 3;
+	// if three seconds pass, assume demon is stuck and jump again
 };
 
 void() demon1_jump11 = [ $leap11, demon1_jump12 ] {};
@@ -156,7 +157,7 @@ void(entity attacker, float damage) demon1_pain =
 	if (random()*200 > damage)
 		return; // didn't flinch
 
-	demon1_pain1 ();
+	demon1_pain1();
 };
 
 void() demon1_die1 = [ $death1, demon1_die2 ] { sound(self, CHAN_VOICE, "demon/ddeath.wav", 1, ATTN_NORM); };
@@ -183,13 +184,13 @@ void() demon_die =
 	}
 
 // regular death
-	demon1_die1 ();
+	demon1_die1();
 };
 
 
 void() Demon_MeleeAttack =
 {
-	demon1_atta1 ();
+	demon1_atta1();
 };
 
 

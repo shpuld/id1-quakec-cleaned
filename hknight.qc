@@ -112,7 +112,7 @@ if ( vlen(self.origin - self.enemy.origin) < 80)
 
 // charge
 	SUB_AttackFinished(2);
-	hknight_char_a1 ();
+	hknight_char_a1();
 
 };
 
@@ -121,7 +121,7 @@ void() CheckContinueCharge =
 	if (time > self.attack_finished)
 	{
 		SUB_AttackFinished(3);
-		hknight_run1 ();
+		hknight_run1();
 		return; // done charging
 	}
 	if (random() > 0.5)
@@ -174,7 +174,7 @@ void() hknight_walk20 = [ $walk20, hknight_walk1 ] { ai_walk(2); };
 void() hknight_run1 = [ $run1, hknight_run2 ]
 {
 	hk_idle_sound();
-	ai_run (20);
+	ai_run(20);
 	CheckForCharge();
 };
 void() hknight_run2 = [ $run2, hknight_run3 ] { ai_run(25); };
@@ -238,9 +238,9 @@ void() hknight_die =
 // regular death
 	sound(self, CHAN_VOICE, "hknight/death1.wav", 1, ATTN_NORM);
 	if (random() > 0.5)
-		hknight_die1 ();
+		hknight_die1();
 	else
-		hknight_dieb1 ();
+		hknight_dieb1();
 };
 
 
@@ -393,16 +393,16 @@ void(entity attacker, float damage) hknight_pain =
 
 	if (time - self.pain_finished > 5)
 	{ // allways go into pain frame if it has been a while
-		hknight_pain1 ();
+		hknight_pain1();
 		self.pain_finished = time + 1;
 		return;
 	}
 
-	if ((random()*30 > damage) )
+	if ((random()*30 > damage))
 		return; // didn't flinch
 
 	self.pain_finished = time + 1;
-	hknight_pain1 ();
+	hknight_pain1();
 };
 
 float hknight_type;
@@ -413,12 +413,12 @@ void() hknight_melee =
 
 	sound(self, CHAN_WEAPON, "hknight/slash1.wav", 1, ATTN_NORM);
 	if (hknight_type == 1)
-		hknight_slice1 ();
+		hknight_slice1();
 	else if (hknight_type == 2)
-		hknight_smash1 ();
+		hknight_smash1();
 	else if (hknight_type == 3)
 	{
-		hknight_watk1 ();
+		hknight_watk1();
 		hknight_type = 0;
 	}
 };

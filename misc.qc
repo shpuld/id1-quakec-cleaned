@@ -576,7 +576,7 @@ This bmodel appears unless players have all of the episode sigils.
 void() func_bossgate =
 
 {
-	if ( (serverflags & 15) == 15)
+	if ((serverflags & 15) == 15)
 		return; // all episodes completed
 	self.angles = '0 0 0';
 	self.movetype = MOVETYPE_PUSH; // so it doesn't get pushed by anything
